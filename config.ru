@@ -161,6 +161,9 @@ map '/' do
     to configure Travis CI for this application.
   </p>
   <p>
+    Please review our <a href="http://about.travis-ci.org/">Documentation</a>.
+  </p>
+  <p>
     This quickstart is a simple <a href="http://rack.github.io/">Rack</a> application.
     If you want to play a little more,
     tweak <code>config.ru</code> to your heart's content, and push your code to Github.
