@@ -5,6 +5,7 @@ with open source continuous integration system, Travis CI.
 # How to Use
 This is a Ruby 1.9 application.
 Using the `rhc` utility, create an application:
+
 ```
 rhc app create myapp ruby-1.9 --from-code https://github.com/BanzaiMan/openshift-travis-quickstart.git
 ```
@@ -16,7 +17,8 @@ We will work in that copy: `cd myapp`
 
 This copy has a git remote pointing to your OpenShift gear,
 so it is a good idea to rename it before
-running the command above:
+going further:
+
 ```
 git remote rename origin openshift
 ```
@@ -26,8 +28,9 @@ The name can be anything, but for the purpose of illustration,
 we call it `myapp`.
 
 Finally, add a remote pointing to Github:
+
 ```
-git remote add origin https://github.com/<USER>/openshift-travis-quickstart.git # use appropriate git URL
+git remote add origin https://github.com/<USER>/myapp.git
 ```
 And push code:
 
@@ -51,13 +54,13 @@ to populate the `deploy` section:
 $ travis setup openshift
 OpenShift user: user@example.com
 OpenShift password: ************
-OpenShift application name: |openshift-travis-quickstart| myapp
+OpenShift application name: |myapp|
 OpenShift domain: openshiftdomain
-Deploy only from <USER>/openshift-travis-quickstart? |yes| 
+Deploy only from <USER>/myapp? |yes| 
 Encrypt password? |yes| 
 ```
 
-## Build script
+### Note on Build Script
 The default build script for a Ruby application on Travis is
 `rake`.
 This is not applicable for this simple application, so we override this
@@ -73,3 +76,15 @@ given in `.travis.yml`.
 git add .travis.yml
 git commit -m 'Set up Travis build'
 git push origin master
+```
+
+## Check the Result
+Since the deployment to your OpenShift gear will be initiated by
+Travis, you will not see the deployment result from the `git push`
+above.
+You can check the status with [Travis](http://travis-ci.org), or
+you can run:
+
+```
+travis logs -r <USER>/myapp
+```
