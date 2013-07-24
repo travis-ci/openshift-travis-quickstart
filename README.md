@@ -7,7 +7,7 @@ This is a Ruby 1.9 application.
 Using the `rhc` utility, create an application:
 
 ```
-rhc app create myapp ruby-1.9 --from-code https://github.com/BanzaiMan/openshift-travis-quickstart.git
+rhc app create myapp ruby-1.9 --from-code https://github.com/travis-ci/openshift-travis-quickstart.git
 ```
 
 ## Add Github remote
