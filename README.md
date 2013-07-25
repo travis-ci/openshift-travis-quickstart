@@ -46,7 +46,7 @@ If you do not see it, press "Sync now" button near the top of the page.
 
 ## Edit `.travis.yml`
 This quickstart has a near-empty `.travis.yml`
-(more on this below).
+(more on this [below](#note-on-build-script)).
 After running `bundle install` to install dependencies, run `travis`
 to populate the `deploy` section:
 
