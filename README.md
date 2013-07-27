@@ -10,6 +10,8 @@ Using the `rhc` utility, create an application:
 rhc app create myapp ruby-1.9 --from-code https://github.com/travis-ci/openshift-travis-quickstart.git
 ```
 
+Or, you can use the [Console](https://openshift.redhat.com/app/console/application_types/quickstart!15074).
+
 ## Add Github remote
 `rhc app create` creates a local working copy in `myapp`.
 
